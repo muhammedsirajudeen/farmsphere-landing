@@ -49,6 +49,7 @@ export default function ShowcaseSection() {
 
   return (
     <section
+    id="solutions"
       ref={ref}
       className="w-full bg-[#f5f5f5] px-6 sm:px-10 lg:px-16 py-16 sm:py-20 overflow-hidden"
     >

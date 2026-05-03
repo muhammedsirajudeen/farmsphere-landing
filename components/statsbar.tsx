@@ -49,6 +49,7 @@ export default function StatsBar() {
 
   return (
     <section
+    id="stats"
       ref={ref}
       className="w-full bg-black text-white py-10 sm:py-14 px-6 sm:px-10 lg:px-16 overflow-hidden"
     >

@@ -52,3 +52,8 @@ p {
 .animate-scroll-float {
   animation: scroll-float 3s ease-in-out infinite;
 }
+
+html {
+  scroll-behavior: auto;
+  /* disable default smooth */
+}

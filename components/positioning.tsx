@@ -27,6 +27,7 @@ export default function PositioningSection() {
 
     return (
         <section
+        id="about"
             ref={ref}
             className="relative w-full bg-[#f5f5f5] text-black px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24 overflow-hidden"
         >

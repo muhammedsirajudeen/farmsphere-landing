@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-white text-black">
+    <section id="home" className="relative h-screen w-full overflow-hidden bg-white text-black">
 
       {/* VIDEO BACKGROUND */}
       <video

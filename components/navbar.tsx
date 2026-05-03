@@ -3,6 +3,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Solutions", href: "#solutions" },
+  { name: "Stats", href: "#stats" },
+  { name: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -10,21 +18,37 @@ export default function Navbar() {
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
   }, [open]);
+const handleScroll = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
 
+  el.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+
+  setOpen(false);
+};
   return (
     <>
       {/* NAVBAR */}
       <div className="absolute top-0 left-0 w-full px-6 sm:px-10 py-4 sm:py-6 flex justify-between items-center backdrop-blur-md bg-white/60 border-b border-black/10 z-30">
         
-        <div className="text-sm font-medium">FarmSphere</div>
+        <a href="#home" className="text-sm font-medium cursor-pointer">
+          FarmSphere
+        </a>
 
         {/* Desktop */}
         <div className="hidden md:flex gap-8 text-sm text-black/70">
-          {["About", "Solutions", "FAQ", "Career"].map((item) => (
-            <span key={item} className="hover:text-black cursor-pointer">
-              {item}
-            </span>
-          ))}
+{links.map((link) => (
+  <button
+    key={link.name}
+    onClick={() => handleScroll(link.href.replace("#", ""))}
+    className="hover:text-black cursor-pointer transition"
+  >
+    {link.name}
+  </button>
+))}
         </div>
 
         {/* Mobile Button */}
@@ -69,22 +93,22 @@ export default function Navbar() {
 
             {/* NAV LINKS */}
             <div className="flex flex-col gap-6 text-lg">
-              {["About", "Solutions", "FAQ", "Career"].map((item, i) => (
-                <span
-                  key={item}
-                  onClick={() => setOpen(false)}
-                  className={`cursor-pointer hover:text-black/70 transition-all duration-500 ${
-                    open
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-6 opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: open ? `${i * 80 + 150}ms` : "0ms",
-                  }}
-                >
-                  {item}
-                </span>
-              ))}
+{links.map((link, i) => (
+  <button
+    key={link.name}
+    onClick={() => handleScroll(link.href.replace("#", ""))}
+    className={`text-left cursor-pointer hover:text-black/70 transition-all duration-500 ${
+      open
+        ? "translate-x-0 opacity-100"
+        : "translate-x-6 opacity-0"
+    }`}
+    style={{
+      transitionDelay: open ? `${i * 80 + 150}ms` : "0ms",
+    }}
+  >
+    {link.name}
+  </button>
+))}
             </div>
 
           </div>
