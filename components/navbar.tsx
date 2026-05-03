@@ -110,7 +110,7 @@ export default function Navbar() {
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
                 <Image
-                  src={"/logo.png"}
+                  src={"/logo1.png"}
                   height={28}
                   width={28}
                   alt="logo"
