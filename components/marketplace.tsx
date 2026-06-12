@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ShoppingCart, TrendingDown, ClipboardList, LineChart, Wallet } from "lucide-react";
 
 export default function MarketplaceSection() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -23,27 +22,22 @@ export default function MarketplaceSection() {
 
   const benefits = [
     {
-      icon: <ShoppingCart size={24} className="text-[#e6a756]" />,
       title: "Vendor Transparency",
       desc: "Compare multiple suppliers and make informed purchasing decisions.",
     },
     {
-      icon: <TrendingDown size={24} className="text-[#e6a756]" />,
       title: "Better Pricing",
       desc: "Leverage aggregated demand and benchmark pricing.",
     },
     {
-      icon: <ClipboardList size={24} className="text-[#e6a756]" />,
       title: "Procurement History",
       desc: "Maintain structured purchase records and spending visibility.",
     },
     {
-      icon: <LineChart size={24} className="text-[#e6a756]" />,
       title: "Planning & Forecasting",
       desc: "Plan purchases based on operational needs and consumption patterns.",
     },
     {
-      icon: <Wallet size={24} className="text-[#e6a756]" />,
       title: "Improved Cash Flow",
       desc: "Optimize procurement cycles and avoid unplanned purchases.",
     },
@@ -62,7 +56,7 @@ export default function MarketplaceSection() {
     <section
       id="marketplace"
       ref={ref}
-      className="relative w-full bg-white text-black px-6 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden"
+      className="relative w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
@@ -77,7 +71,7 @@ export default function MarketplaceSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium mt-4">
             Smarter Agricultural Procurement
           </h2>
-          <p className="text-black/60 mt-4 text-base sm:text-lg">
+          <p className="text-white/60 mt-4 text-base sm:text-lg">
             The FarmSphere Marketplace connects professional farms with trusted
             suppliers, enabling transparent, efficient, and cost-effective
             procurement.
@@ -85,75 +79,83 @@ export default function MarketplaceSection() {
         </div>
 
         {/* CONTENT */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* BENEFITS */}
+        <div className="mt-16 sm:mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+          
+          {/* LEFT COLUMN - STEPS GRAPH */}
           <div
-            className={`flex flex-col gap-8 transition-all duration-700 delay-200 ease-out ${
+            className={`flex flex-col transition-all duration-700 delay-200 ease-out ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <div>
-              <h3 className="text-2xl font-medium mb-6">Marketplace Benefits</h3>
-              <div className="flex flex-col gap-6">
-                {benefits.map((b, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="p-3 bg-[#f5f5f5] rounded-xl shrink-0">
-                      {b.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-lg">{b.title}</h4>
-                      <p className="text-black/60 text-sm mt-1">{b.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+            <h3 className="text-2xl sm:text-3xl font-medium mb-10">How It Works</h3>
+            <div className="relative ml-4 pl-12 space-y-16">
+              {/* Background static line */}
+              <div className="absolute left-0 top-4 bottom-2 w-px bg-white/10" />
+              
+              {/* Animated growing line */}
+              <div 
+                className="absolute left-0 top-4 w-px bg-gradient-to-b from-[#e6a756] via-[#e6a756] to-transparent transition-all ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{ 
+                  height: visible ? "100%" : "0%",
+                  transitionDuration: "2500ms", 
+                  transitionDelay: "300ms"
+                }}
+              />
 
-          {/* RIGHT COLUMN - STEPS & CATEGORIES */}
-          <div
-            className={`flex flex-col gap-10 transition-all duration-700 delay-400 ease-out ${
-              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
-            {/* CATEGORIES */}
-            <div className="bg-[#f5f5f5] p-8 rounded-2xl">
-              <h3 className="text-xl font-medium mb-4">What you can purchase</h3>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Feed & Nutritional Products",
-                  "Veterinary Medicines",
-                  "Health & Wellness Products",
-                  "Farm Equipment",
-                  "Agricultural Consumables",
-                  "Operational Supplies",
-                ].map((cat, i) => (
-                  <span
-                    key={i}
-                    className="px-4 py-2 bg-white rounded-full text-sm font-medium border border-black/5"
+              {steps.map((step, i) => (
+                <div key={i} className="relative group">
+                  {/* Pulsating dot */}
+                  <div 
+                    className={`absolute -left-[58px] top-1 transition-all duration-700 ${
+                      visible ? "opacity-100 scale-100" : "opacity-0 scale-50"
+                    }`}
+                    style={{ transitionDelay: `${400 + i * 300}ms` }}
                   >
-                    {cat}
-                  </span>
-                ))}
-              </div>
+                    <div className="relative flex h-6 w-6 items-center justify-center">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e6a756] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-4 w-4 bg-[#e6a756] shadow-[0_0_12px_#e6a756]"></span>
+                    </div>
+                  </div>
+                  <h4 
+                    className={`font-medium text-xl sm:text-2xl text-white transition-colors duration-300 group-hover:text-[#e6a756]`}
+                  >
+                    Step {i + 1}
+                  </h4>
+                  <p className="text-base sm:text-lg text-white/60 mt-3 max-w-sm leading-relaxed">
+                    {step}
+                  </p>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* HOW IT WORKS */}
+          {/* RIGHT COLUMN - BENEFITS & CATEGORIES */}
+          <div
+            className={`flex flex-col gap-12 sm:gap-16 transition-all duration-700 delay-400 ease-out ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            {/* BENEFITS */}
             <div>
-              <h3 className="text-2xl font-medium mb-6">How It Works</h3>
-              <div className="relative border-l border-black/10 ml-3 pl-6 space-y-6">
-                {steps.map((step, i) => (
-                  <div key={i} className="relative">
-                    <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-black border-4 border-white" />
-                    <h4 className="font-medium text-base text-black/80">
-                      Step {i + 1}
-                    </h4>
-                    <p className="text-sm text-black/60 mt-1">{step}</p>
+              <h3 className="text-2xl sm:text-3xl font-medium mb-8">Marketplace Benefits</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                {benefits.map((b, i) => (
+                  <div 
+                    key={i} 
+                    className="p-6 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors duration-300"
+                  >
+                    <div className="text-[#e6a756] font-bold text-xl sm:text-2xl mb-4">
+                      0{i + 1}
+                    </div>
+                    <h4 className="font-medium text-base sm:text-lg">{b.title}</h4>
+                    <p className="text-white/60 text-sm mt-2">{b.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
+
         </div>
       </div>
     </section>

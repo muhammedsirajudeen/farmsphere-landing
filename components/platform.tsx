@@ -21,37 +21,6 @@ export default function PlatformSection() {
     return () => observer.disconnect();
   }, []);
 
-  const features = [
-    {
-      title: "Farm Management",
-      desc: "Track livestock, production cycles, treatments, feed consumption, and operational activities.",
-    },
-    {
-      title: "Performance Analytics",
-      desc: "Monitor efficiency metrics, cost structures, and production performance.",
-    },
-    {
-      title: "Procurement Planning",
-      desc: "Align purchasing decisions with operational requirements.",
-    },
-    {
-      title: "Cost Management",
-      desc: "Analyze spending patterns and identify cost-saving opportunities.",
-    },
-    {
-      title: "Benchmarking",
-      desc: "Compare performance across farms, regions, and production cycles.",
-    },
-    {
-      title: "Vendor Management",
-      desc: "Manage supplier relationships and procurement history.",
-    },
-    {
-      title: "Subscription & Billing",
-      desc: "Flexible plans designed for farms of different sizes.",
-    },
-  ];
-
   const pricing = [
     {
       plan: "Starter",
@@ -65,6 +34,7 @@ export default function PlatformSection() {
         "Standard support",
       ],
       highlight: false,
+      buttonText: "Get Started",
     },
     {
       plan: "Professional",
@@ -79,6 +49,7 @@ export default function PlatformSection() {
         "Priority support",
       ],
       highlight: true,
+      buttonText: "Get Started",
     },
     {
       plan: "Premium",
@@ -93,6 +64,22 @@ export default function PlatformSection() {
         "Dedicated account support",
       ],
       highlight: false,
+      buttonText: "Get Started",
+    },
+    {
+      plan: "Enterprise",
+      price: "Custom",
+      period: "",
+      desc: "Customized solution for large agricultural operations.",
+      features: [
+        "Everything in Premium",
+        "Custom integrations",
+        "Dedicated account manager",
+        "SLA guarantees",
+        "Tailored onboarding",
+      ],
+      highlight: false,
+      buttonText: "Contact Sales",
     },
   ];
 
@@ -102,72 +89,37 @@ export default function PlatformSection() {
       ref={ref}
       className="relative w-full bg-[#fcfcfc] text-black px-6 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" id="pricing">
         {/* HEADER */}
         <div
-          className={`text-center max-w-3xl mx-auto transition-all duration-700 ease-out ${
+          className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ease-out ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <span className="text-black/50 font-semibold text-sm tracking-wider uppercase">
-            FarmSphere Platform
+            Pricing Plans
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium mt-4">
-            Your Complete Farm Operating System
+            Flexible Plans for Every Farm
           </h2>
           <p className="text-black/60 mt-4 text-base sm:text-lg">
-            FarmSphere combines operational intelligence, analytics, planning, and
-            procurement into one powerful platform.
+            Choose the right FarmSphere plan to optimize your operations and scale your agricultural business.
           </p>
-        </div>
-
-        {/* FEATURES GRID */}
-        <div
-          className={`mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 delay-200 ease-out ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          {features.map((feat, i) => (
-            <div
-              key={i}
-              className="bg-white border border-black/5 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-            >
-              <h3 className="font-medium text-lg text-black">{feat.title}</h3>
-              <p className="text-black/60 text-sm mt-2 leading-relaxed">
-                {feat.desc}
-              </p>
-            </div>
-          ))}
-          
-          <div className="bg-black text-white p-6 rounded-2xl flex flex-col justify-center items-start lg:col-span-2">
-            <h3 className="font-medium text-xl">Request Enterprise Pricing</h3>
-            <p className="text-white/70 text-sm mt-2 max-w-md">
-              Need a customized solution for large agricultural operations? Contact our team for tailored pricing and onboarding.
-            </p>
-            <button className="mt-4 px-5 py-2 bg-white text-black text-sm font-medium rounded-full hover:scale-105 transition">
-              Contact Sales
-            </button>
-          </div>
         </div>
 
         {/* PRICING */}
         <div
-          id="pricing"
-          className={`mt-24 transition-all duration-700 delay-300 ease-out ${
+          className={`transition-all duration-700 delay-200 ease-out ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-medium">Pricing Plans</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {pricing.map((p, i) => (
               <div
                 key={i}
-                className={`relative flex flex-col p-8 rounded-3xl ${
+                className={`relative flex flex-col p-6 xl:p-8 rounded-3xl ${
                   p.highlight
-                    ? "bg-black text-white shadow-xl scale-100 md:scale-105 z-10"
+                    ? "bg-black text-white shadow-xl scale-100 lg:scale-105 z-10"
                     : "bg-white border border-black/10 text-black"
                 }`}
               >
@@ -178,14 +130,14 @@ export default function PlatformSection() {
                 )}
                 <h3 className="text-xl font-medium">{p.plan}</h3>
                 <p
-                  className={`text-sm mt-2 ${
+                  className={`text-sm mt-2 h-10 ${
                     p.highlight ? "text-white/70" : "text-black/60"
                   }`}
                 >
                   {p.desc}
                 </p>
                 <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-4xl font-semibold">{p.price}</span>
+                  <span className="text-3xl xl:text-4xl font-semibold">{p.price}</span>
                   <span
                     className={`text-sm ${
                       p.highlight ? "text-white/70" : "text-black/60"
@@ -199,7 +151,7 @@ export default function PlatformSection() {
                   {p.features.map((feat, j) => (
                     <div key={j} className="flex items-start gap-3">
                       <CheckCircle2
-                        size={18}
+                         size={18}
                         className={`shrink-0 ${
                           p.highlight ? "text-[#e6a756]" : "text-black/40"
                         }`}
@@ -222,7 +174,7 @@ export default function PlatformSection() {
                       : "bg-black text-white hover:bg-black/80"
                   }`}
                 >
-                  Get Started
+                  {p.buttonText}
                 </button>
               </div>
             ))}
