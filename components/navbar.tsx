@@ -6,10 +6,11 @@ import Image from "next/image";
 
 const links = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "Stats", href: "#stats" },
-  { name: "Contact", href: "#contact" },
+  { name: "About Us", href: "#about" },
+  { name: "Marketplace", href: "#marketplace" },
+  { name: "Platform", href: "#platform" },
+  { name: "Pricing", href: "#pricing" },
+  { name: "Contact Us", href: "#contact" },
 ];
 
 export default function Navbar() {

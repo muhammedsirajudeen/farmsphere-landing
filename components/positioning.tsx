@@ -23,7 +23,7 @@ export default function PositioningSection() {
     }, []);
 
     const text =
-        "We’re not here to digitize farming. We’re    here to make farm operations financially predictable, efficient, and scalable.";
+        "FarmSphere Technologies is building the future of commercial agriculture through a unified platform that combines operational intelligence, procurement optimization, and financial performance management.";
 
     return (
         <section
@@ -36,12 +36,14 @@ export default function PositioningSection() {
                 {/* LEFT */}
                 <div className="max-w-xs text-sm text-black/60 leading-relaxed">
                     <p>
-                        Most farms operate with scale but without structured visibility.
-                        Costs exist, but optimization doesn’t.
+                        Our mission is to help commercial farms transform routine farming activities into measurable business outcomes through data, analytics, and smarter purchasing decisions.
+                    </p>
+                    <p className="mt-4">
+                        We believe that successful farming is not only about production—it's about profitability, operational efficiency, and sustainable growth.
                     </p>
 
                     <div className="mt-4 text-black underline cursor-pointer">
-                        Learn more →
+                        Learn more about our Vision →
                     </div>
                 </div>
 

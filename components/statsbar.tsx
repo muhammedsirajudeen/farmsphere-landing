@@ -23,27 +23,27 @@ export default function StatsBar() {
 
   const stats = [
     {
-      value: "90–150",
-      suffix: "K",
-      prefix: "₹",
-      label: "Annual cost leakage per farm due to inefficiencies.",
-    },
-    {
-      value: "3–5",
+      prefix: "Up to ",
+      value: "5",
       suffix: "%",
-      label: "Input inefficiency across feed and operational consumption.",
+      label: "Improvement in input efficiency.",
     },
     {
-      value: "36–90",
-      suffix: "K",
-      prefix: "₹",
-      label: "Potential yearly savings through optimization.",
+      prefix: "Up to ",
+      value: "3",
+      suffix: "%",
+      label: "Procurement savings.",
     },
     {
-      value: "18",
-      suffix: "L",
-      prefix: "₹",
-      label: "Average annual input spend per farm.",
+      value: "50",
+      suffix: "+",
+      label: "Designed for professional farms with large operational scale.",
+    },
+    {
+      value: "1",
+      suffix: "",
+      prefix: "",
+      label: "Integrated intelligence and procurement ecosystem.",
     },
   ];
 

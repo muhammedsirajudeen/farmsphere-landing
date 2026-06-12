@@ -6,18 +6,18 @@ import { ArrowUpRight } from "lucide-react";
 const slides = [
   {
     image: "/farm1.jpg",
-    title: "Optimized by Design",
-    desc: "Move from reactive workflows to structured, data-driven farm operations.",
+    title: "Real-time Tracking",
+    desc: "Track farm performance in real-time to optimize operations.",
   },
   {
     image: "/farm2.jpg",
-    title: "Cost Visibility",
-    desc: "Track every input cost and eliminate hidden inefficiencies.",
+    title: "Procurement & Cost",
+    desc: "Optimize input costs and access trusted agricultural suppliers.",
   },
   {
     image: "/farm3.jpg",
-    title: "Procurement Intelligence",
-    desc: "Make smarter purchasing decisions backed by real data.",
+    title: "Benchmarking",
+    desc: "Benchmark operational efficiency and improve profitability through actionable insights.",
   },
 ];
 
@@ -119,15 +119,15 @@ export default function ShowcaseSection() {
                 <div className="w-8 h-8 rounded-full border border-black/30 -ml-3 translate-y-[2px]" />
                 <div className="w-8 h-8 rounded-full border border-black/20 -ml-3 -translate-y-[2px]" />
               </div>
-              <span className="text-xs text-black/60">© 2024</span>
+              <span className="text-xs text-black/60">© 2026</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl lg:text-3xl leading-tight font-medium mt-4 sm:mt-6">
-              We help farms move from inefficient operations to optimized systems.
+              Improve profitability through actionable insights.
             </h3>
 
             <p className="text-sm text-black/60 mt-3 sm:mt-4">
-              &quot;Farms often operate without structured visibility, leading to hidden inefficiencies and cost leakage.&quot;
+              &quot;Access trusted agricultural suppliers and build a resilient supply chain for your farm operations.&quot;
               <br />
               <span className="text-black mt-2 block">— FarmSphere Insight</span>
             </p>

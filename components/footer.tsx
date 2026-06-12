@@ -6,14 +6,13 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
-      id="contact"
       className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-16"
     >
       {/* TOP */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
 
         {/* BRAND */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 lg:col-span-2">
           {/* LOGO */}
           <div className="w-[140px]">
             <Image
@@ -28,61 +27,50 @@ export default function Footer() {
 
           {/* TEXT */}
           <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-            Bringing structure, visibility, and intelligence to modern farm operations.
+            Empowering Commercial Agriculture Through Intelligence & Procurement.
           </p>
-        </div>
 
-        {/* PRODUCT */}
-        <div>
-          <h3 className="text-sm text-white/80 mb-4">Product</h3>
-          <div className="flex flex-col gap-3 text-sm text-white/60">
-            <span className="hover:text-white transition cursor-pointer">
-              Features
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              Pricing
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              Solutions
-            </span>
+          <div className="flex flex-col gap-2 mt-4 text-sm text-white/60">
+            <span>📧 info@farmsphere.app</span>
+            <span>📞 +91 XXXXX XXXXX</span>
           </div>
         </div>
 
-        {/* COMPANY */}
+        {/* QUICK LINKS */}
         <div>
-          <h3 className="text-sm text-white/80 mb-4">Company</h3>
+          <h3 className="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">Quick Links</h3>
           <div className="flex flex-col gap-3 text-sm text-white/60">
-            <span className="hover:text-white transition cursor-pointer">
-              About
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              Careers
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              Contact
-            </span>
+            <span className="hover:text-white transition cursor-pointer">Home</span>
+            <span className="hover:text-white transition cursor-pointer">About Us</span>
+            <span className="hover:text-white transition cursor-pointer">Marketplace</span>
+            <span className="hover:text-white transition cursor-pointer">Platform</span>
+            <span className="hover:text-white transition cursor-pointer">Pricing</span>
+            <span className="hover:text-white transition cursor-pointer">Contact Us</span>
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-sm text-white/80">Get Started</h3>
+        {/* PLATFORM */}
+        <div>
+          <h3 className="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">Platform</h3>
+          <div className="flex flex-col gap-3 text-sm text-white/60">
+            <span className="hover:text-white transition cursor-pointer">Farm Management</span>
+            <span className="hover:text-white transition cursor-pointer">Analytics</span>
+            <span className="hover:text-white transition cursor-pointer">Marketplace</span>
+            <span className="hover:text-white transition cursor-pointer">Procurement Planning</span>
+            <span className="hover:text-white transition cursor-pointer">Vendor Network</span>
+          </div>
+        </div>
 
-          <button className="group flex items-center gap-3 bg-white text-black px-5 py-2.5 rounded-full text-sm font-medium hover:scale-105 transition w-fit">
-            <span>Book a Demo</span>
-
-            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-black">
-              <ArrowUpRight
-                size={14}
-                className="text-white transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
-              />
-            </span>
-          </button>
-
-          {/* subtle reinforcement */}
-          <p className="text-xs text-white/40 max-w-[180px]">
-            See how FarmSphere improves margins with structured intelligence.
-          </p>
+        {/* COMPANY & SOCIAL */}
+        <div>
+          <h3 className="text-sm font-semibold text-white/80 mb-4 uppercase tracking-wider">Company</h3>
+          <div className="flex flex-col gap-3 text-sm text-white/60">
+            <span className="hover:text-white transition cursor-pointer">About FarmSphere</span>
+            <span className="hover:text-white transition cursor-pointer">Milestones</span>
+            <span className="hover:text-white transition cursor-pointer">Careers</span>
+            <span className="hover:text-white transition cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-white transition cursor-pointer">Terms & Conditions</span>
+          </div>
         </div>
       </div>
 
@@ -92,16 +80,15 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
         <span>
-          © {new Date().getFullYear()} FarmSphere. All rights reserved.
+          © 2026 FarmSphere Technologies. All Rights Reserved.
         </span>
 
         <div className="flex gap-6">
-          <span className="hover:text-white transition cursor-pointer">
-            Privacy
-          </span>
-          <span className="hover:text-white transition cursor-pointer">
-            Terms
-          </span>
+          <span className="hover:text-white transition cursor-pointer">Facebook</span>
+          <span className="hover:text-white transition cursor-pointer">Instagram</span>
+          <span className="hover:text-white transition cursor-pointer">LinkedIn</span>
+          <span className="hover:text-white transition cursor-pointer">YouTube</span>
+          <span className="hover:text-white transition cursor-pointer">X (Twitter)</span>
         </div>
       </div>
     </footer>

@@ -53,36 +53,35 @@ export default function Hero() {
           <div>
             {/* HEADLINE */}
             <h1
-              className={`text-[36px] sm:text-[48px] lg:text-[64px] leading-[1.05] tracking-[-0.03em] font-[300] max-w-3xl transition-all duration-700 ease-out ${
+              className={`text-[36px] sm:text-[48px] lg:text-[64px] leading-[1.05] tracking-[-0.03em] font-[300] max-w-4xl transition-all duration-700 ease-out ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
             >
-              Rethink Farm Operations.
-              <br />
-              Optimize Costs.
-              <br />
-              Increase Margins.
+              Transforming Commercial Farming Through Intelligence & Procurement
             </h1>
 
             {/* CTA */}
             <div
-              className={`mt-6 sm:mt-8 transition-all duration-700 delay-200 ease-out ${
+              className={`mt-6 sm:mt-8 transition-all duration-700 delay-200 ease-out flex gap-4 ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
             >
               <button className="group flex items-center gap-3 bg-black text-white px-4 py-2.5 sm:px-5 rounded-full text-sm font-medium transition hover:scale-105">
-                <span className="pl-1">Get Started</span>
-
+                <span className="pl-1">Request a Demo</span>
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white">
                   <ArrowUpRight
                     size={14}
                     className="text-black transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
                   />
                 </span>
+              </button>
+              
+              <button className="hidden sm:flex group items-center gap-3 bg-transparent border border-black/20 text-black px-4 py-2.5 sm:px-5 rounded-full text-sm font-medium transition hover:border-black hover:bg-black/5">
+                <span>Join the Platform</span>
               </button>
             </div>
 
@@ -94,25 +93,23 @@ export default function Hero() {
                   : "opacity-0 translate-y-10"
               }`}
             >
-              Track input costs, analyze performance, and optimize procurement
-              decisions — all in one system built for serious farming operations.
+              FarmSphere is an integrated agricultural intelligence and procurement platform designed to help professional farms optimize operations, reduce costs, and improve profitability.
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="hidden lg:flex justify-end">
             <div
-              className={`max-w-xs text-sm text-black/70 leading-relaxed mt-6 transition-all duration-700 delay-300 ease-out ${
+              className={`max-w-sm text-sm text-black/70 leading-relaxed mt-6 transition-all duration-700 delay-300 ease-out ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
             >
-              Track input costs, analyze performance, and optimize procurement
-              decisions — all in one system built for serious farming operations.
+              By connecting farm management, operational analytics, and a built-in marketplace, FarmSphere empowers commercial farmers to make data-driven decisions and achieve sustainable growth.
               <br />
-              <span className="underline cursor-pointer text-black">
-                Learn more →
+              <span className="underline cursor-pointer text-black mt-2 inline-block">
+                Watch Overview Video
               </span>
             </div>
           </div>
@@ -127,7 +124,7 @@ export default function Hero() {
             : "opacity-0 translate-y-10"
         }`}
       >
-        {["Cost Control", "Procurement", "Efficiency", "Analytics", "ROI"].map(
+        {["Smarter Operations", "Better Procurement", "Higher Margins"].map(
           (tag) => (
             <span
               key={tag}
