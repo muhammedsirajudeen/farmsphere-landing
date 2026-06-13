@@ -4,38 +4,59 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
+import Link from "next/link";
+
 const links = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Marketplace", href: "#marketplace" },
-  { name: "Platform", href: "#platform" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/#about" },
+  { name: "Marketplace", href: "/#marketplace" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
   }, [open]);
 
-  const handleScroll = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
     setOpen(false);
   };
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       {/* NAVBAR */}
-      <div className="absolute top-0 left-0 w-full px-6 sm:px-10 py-4 sm:py-5 flex justify-between items-center backdrop-blur-md bg-white border-b border-black/10 z-30">
+      <div 
+        className={`fixed top-0 left-0 w-full px-6 sm:px-10 flex justify-between items-center z-30 transition-all duration-300 ${
+          isScrolled 
+            ? "py-3 sm:py-4 bg-white/70 backdrop-blur-lg border-b border-black/10 shadow-[0_4px_30px_rgba(0,0,0,0.03)]" 
+            : "py-4 sm:py-6 bg-transparent border-b border-transparent"
+        }`}
+      >
 
         {/* BRAND LOCKUP */}
 {/* BRAND LOCKUP */}
@@ -64,13 +85,14 @@ export default function Navbar() {
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8 text-sm text-black/70">
           {links.map((link) => (
-            <button
+            <Link
               key={link.name}
-              onClick={() => handleScroll(link.href.replace("#", ""))}
+              href={link.href}
+              onClick={(e) => handleScroll(e, link.href)}
               className="relative hover:text-black transition"
             >
               {link.name}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -130,9 +152,10 @@ export default function Navbar() {
             {/* LINKS */}
             <div className="flex flex-col gap-6 text-lg">
               {links.map((link, i) => (
-                <button
+                <Link
                   key={link.name}
-                  onClick={() => handleScroll(link.href.replace("#", ""))}
+                  href={link.href}
+                  onClick={(e) => handleScroll(e, link.href)}
                   className={`text-left hover:text-black/70 transition-all duration-500 ${
                     open
                       ? "translate-x-0 opacity-100"
@@ -143,7 +166,7 @@ export default function Navbar() {
                   }}
                 >
                   {link.name}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
