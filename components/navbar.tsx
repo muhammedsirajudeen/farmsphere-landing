@@ -58,8 +58,7 @@ export default function Navbar() {
       >
 
         {/* BRAND LOCKUP */}
-        {/* BRAND LOCKUP */}
-        <div className="flex items-center gap-3 cursor-pointer group">
+        <Link href="/" className="flex items-center gap-3 cursor-pointer group">
           <div className="relative">
             <div className="absolute inset-0 rounded-xl  scale-110 group-hover:scale-125 transition-transform duration-500" />
             <Image
@@ -79,7 +78,7 @@ export default function Navbar() {
               Technologies
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8 text-sm text-black/70">
@@ -127,7 +126,7 @@ export default function Navbar() {
 
             {/* HEADER */}
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
+              <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-2">
                 <Image
                   src={"/logo1.png"}
                   height={28}
@@ -135,7 +134,7 @@ export default function Navbar() {
                   alt="logo"
                 />
                 <span className="text-sm font-medium">FarmSphere</span>
-              </div>
+              </Link>
 
               <button
                 onClick={() => setOpen(false)}

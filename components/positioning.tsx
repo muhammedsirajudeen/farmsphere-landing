@@ -27,7 +27,7 @@ export default function PositioningSection() {
 
     return (
         <section
-        id="about"
+            id="about"
             ref={ref}
             className="relative w-full bg-[#f5f5f5] text-black px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24 overflow-hidden"
         >
@@ -69,20 +69,20 @@ export default function PositioningSection() {
 
                     {/* CTA */}
                     <div className="mt-8">
-    <button className="group flex items-center gap-3 bg-[#e6a756] text-black px-4 py-2 rounded-full text-sm font-medium transition hover:scale-105">
-      
-      {/* TEXT */}
-      <span className="pl-1">Get Started</span>
+                        <button className="group flex items-center gap-3 bg-[#e6a756] text-black px-4 py-2 rounded-full text-sm font-medium transition hover:scale-105">
 
-      {/* ICON CIRCLE */}
-      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white">
-        <ArrowUpRight
-          size={14}
-          className="transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
-        />
-      </span>
+                            {/* TEXT */}
+                            <span className="pl-1">Get Started</span>
 
-    </button>
+                            {/* ICON CIRCLE */}
+                            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white">
+                                <ArrowUpRight
+                                    size={14}
+                                    className="transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
+                                />
+                            </span>
+
+                        </button>
                     </div>
                 </div>
             </div>
