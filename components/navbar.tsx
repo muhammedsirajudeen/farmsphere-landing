@@ -9,7 +9,7 @@ import Link from "next/link";
 const links = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/#about" },
-  { name: "Marketplace", href: "/#marketplace" },
+  { name: "Marketplace", href: "/marketplace" },
   { name: "Pricing", href: "/pricing" },
   { name: "Contact Us", href: "/contact" },
 ];

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function MarketplaceSection() {
+export default function MarketplaceSection({ theme = "dark" }: { theme?: "dark" | "light" }) {
+  const isLight = theme === "light";
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -56,7 +57,9 @@ export default function MarketplaceSection() {
     <section
       id="marketplace"
       ref={ref}
-      className="relative w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden"
+      className={`relative w-full px-6 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden ${
+        isLight ? "bg-white text-black" : "bg-black text-white"
+      }`}
     >
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
@@ -71,7 +74,7 @@ export default function MarketplaceSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium mt-4">
             Smarter Agricultural Procurement
           </h2>
-          <p className="text-white/60 mt-4 text-base sm:text-lg">
+          <p className={`mt-4 text-base sm:text-lg ${isLight ? "text-black/60" : "text-white/60"}`}>
             The FarmSphere Marketplace connects professional farms with trusted
             suppliers, enabling transparent, efficient, and cost-effective
             procurement.
@@ -90,7 +93,7 @@ export default function MarketplaceSection() {
             <h3 className="text-2xl sm:text-3xl font-medium mb-10">How It Works</h3>
             <div className="relative ml-4 pl-12 space-y-16">
               {/* Background static line */}
-              <div className="absolute left-0 top-4 bottom-2 w-px bg-white/10" />
+              <div className={`absolute left-0 top-4 bottom-2 w-px ${isLight ? "bg-black/10" : "bg-white/10"}`} />
               
               {/* Animated growing line */}
               <div 
@@ -117,11 +120,13 @@ export default function MarketplaceSection() {
                     </div>
                   </div>
                   <h4 
-                    className={`font-medium text-xl sm:text-2xl text-white transition-colors duration-300 group-hover:text-[#e6a756]`}
+                    className={`font-medium text-xl sm:text-2xl transition-colors duration-300 group-hover:text-[#e6a756] ${
+                      isLight ? "text-black" : "text-white"
+                    }`}
                   >
                     Step {i + 1}
                   </h4>
-                  <p className="text-base sm:text-lg text-white/60 mt-3 max-w-sm leading-relaxed">
+                  <p className={`text-base sm:text-lg mt-3 max-w-sm leading-relaxed ${isLight ? "text-black/60" : "text-white/60"}`}>
                     {step}
                   </p>
                 </div>
@@ -142,13 +147,17 @@ export default function MarketplaceSection() {
                 {benefits.map((b, i) => (
                   <div 
                     key={i} 
-                    className="p-6 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors duration-300"
+                    className={`p-6 border rounded-2xl transition-colors duration-300 ${
+                      isLight 
+                        ? "border-black/10 bg-black/5 hover:bg-black/10" 
+                        : "border-white/10 bg-white/5 hover:bg-white/10"
+                    }`}
                   >
                     <div className="text-[#e6a756] font-bold text-xl sm:text-2xl mb-4">
                       0{i + 1}
                     </div>
                     <h4 className="font-medium text-base sm:text-lg">{b.title}</h4>
-                    <p className="text-white/60 text-sm mt-2">{b.desc}</p>
+                    <p className={`text-sm mt-2 ${isLight ? "text-black/60" : "text-white/60"}`}>{b.desc}</p>
                   </div>
                 ))}
               </div>
